@@ -20,13 +20,13 @@ let uploadFile= async ( file) =>{
         ACL: "public-read",
         Bucket: "classroom-training-bucket",  //HERE
         Key: "abc/" + file.originalname, //HERE 
-        Body: file.buffer
+        Body: file.buffer 
     }
 
 
     s3.upload( uploadParams, function (err, data ){
         if(err) {
-            return reject({"error": err})
+            return reject({"error": err}) 
         }
         console.log(data)
         console.log("file uploaded succesfully")
